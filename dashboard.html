@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI60 Growth Console</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121211'/%3E%3Cpath d='M14 46l12-14 9 8 15-20' stroke='%23ffd23f' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="proto-bar"><b>Prototype</b> built for the NxtWave Growth Intern challenge. Not an official NxtWave tool.</div>
+
+  <main class="wrap dash">
+    <header class="dash-head">
+      <div>
+        <a class="back" href="index.html">← Sign-up page</a>
+        <h1>Growth console</h1>
+        <p>Goal: <b id="goalText">500</b> final-year sign-ups in 7 days on a ₹2,000 budget</p>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Data source">
+          <button type="button" data-src="live" aria-pressed="false" id="srcLive">Live data</button>
+          <button type="button" data-src="sim" aria-pressed="true" id="srcSim">Simulated campaign</button>
+        </div>
+        <label class="dayctl" id="dayCtl">As of day <input type="range" id="day" min="1" max="7" value="7"><output id="dayOut">7</output></label>
+        <button type="button" class="btn btn-ghost btn-sm" id="exportCsv">Export CSV</button>
+      </div>
+    </header>
+
+    <div id="banner" class="banner sim"></div>
+
+    <section id="gate" class="card gate" hidden>
+      <h2>Admin key</h2>
+      <p class="fine">Live data includes phone numbers and emails, so the backend only returns it with the admin key from the Apps Script setup.</p>
+      <form id="gateForm" class="field">
+        <label for="keyInput">Key</label>
+        <input id="keyInput" type="password" autocomplete="current-password" required>
+        <div class="dlg-actions"><button class="btn" type="submit">Open live data</button></div>
+        <p id="gateErr" class="form-error" hidden></p>
+      </form>
+    </section>
+
+    <div id="board">
+      <section class="kpis" id="kpis"></section>
+
+      <section class="card">
+        <div class="card-head">
+          <div><h2>Today's decisions</h2><p class="fine" style="margin:0">Fixed rules from the growth plan, applied to the numbers below. No AI in this loop: they decide where the next rupee and the next WhatsApp forward go.</p></div>
+        </div>
+        <ul class="recs" id="recs"></ul>
+      </section>
+
+      <section class="grid2">
+        <div class="card">
+          <h2>Sign-ups vs plan</h2>
+          <p class="fine">Cumulative, by campaign day</p>
+          <ul class="legend" id="legCum"></ul>
+          <div class="chart" id="chartCum"></div>
+        </div>
+        <div class="card">
+          <h2>Daily sign-ups by channel</h2>
+          <p class="fine">Where each day's sign-ups came from</p>
+          <ul class="legend" id="legDaily"></ul>
+          <div class="chart" id="chartDaily"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Channels</h2>
+        <p class="fine">Loop sign-ups are referrals that started from this channel: the second-order value a channel creates.</p>
+        <div class="tbl-wrap"><table class="tbl" id="tblChannels"></table></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <div><h2>Partners</h2><p class="fine" style="margin:0">Champions, club co-hosts and paid placements, each with its own tracked link</p></div>
+          <button type="button" class="btn btn-sm" id="newPartner">+ New partner link</button>
+        </div>
+        <div class="tbl-wrap"><table class="tbl" id="tblPartners"></table></div>
+      </section>
+
+      <section class="grid2">
+        <div class="card">
+          <h2>Top student referrers</h2>
+          <p class="fine">Verified referrals only. Throwaway emails don't count.</p>
+          <div class="tbl-wrap"><table class="tbl" id="tblReferrers"></table></div>
+        </div>
+        <div class="card">
+          <h2>Colleges</h2>
+          <p class="fine">Where to recruit the next champion</p>
+          <div class="tbl-wrap"><table class="tbl" id="tblColleges"></table></div>
+        </div>
+      </section>
+
+      <section class="grid2">
+        <div class="card">
+          <h2>What they want to build</h2>
+          <p class="fine">Tells the instructor which demo to lead with</p>
+          <div class="chart" id="chartProjects"></div>
+        </div>
+        <div class="card">
+          <h2>Graduation year</h2>
+          <p class="fine">Targeting check: the workshop is for final-years</p>
+          <div class="chart" id="chartYears"></div>
+        </div>
+      </section>
+
+      <section class="card" id="simPanel">
+        <h2>Plan simulator</h2>
+        <p class="fine">Change the plan's assumptions and the whole console re-runs. The projection is the average of 8 simulated campaigns.</p>
+        <div class="sliders" id="sliders"></div>
+        <div class="projection" id="projection"></div>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="partnerDlg">
+    <form id="partnerForm" method="dialog">
+      <h2>New partner link</h2>
+      <p class="fine">Every champion, club and paid post gets its own link, so the console can credit sign-ups and cut what doesn't work.</p>
+      <div class="form-grid">
+        <div class="field full"><label for="pName">Name</label><input id="pName" required maxlength="60" placeholder="e.g. Ananya Rao or Instagram story"></div>
+        <div class="field"><label for="pType">Type</label>
+          <select id="pType"><option value="champion">Student champion</option><option value="club">Club co-host</option><option value="paid">Paid placement</option><option value="owned">Owned channel</option></select></div>
+        <div class="field"><label for="pCost">Cost (₹)</label><input id="pCost" type="number" min="0" step="50" value="0" inputmode="numeric"></div>
+        <div class="field full"><label for="pOrg">College / organisation</label><input id="pOrg" maxlength="80" placeholder="e.g. CBIT Hyderabad"></div>
+      </div>
+      <p id="pErr" class="form-error" hidden style="margin-top:12px"></p>
+      <div class="dlg-actions">
+        <button type="button" class="btn btn-ghost" id="pCancel">Cancel</button>
+        <button type="submit" class="btn" id="pSubmit">Create link</button>
+      </div>
+    </form>
+    <div class="dlg" id="partnerDone" hidden>
+      <h2>Link ready</h2>
+      <div class="linkbox"><input id="pLink" readonly aria-label="Partner link"><button class="btn btn-sm" type="button" id="pCopyLink">Copy</button></div>
+      <label class="fine" for="pMsg" style="display:block;margin-bottom:6px">Message to send them</label>
+      <textarea class="msg" id="pMsg" readonly></textarea>
+      <div class="dlg-actions">
+        <button type="button" class="btn btn-ghost" id="pCopyMsg">Copy message</button>
+        <a class="btn btn-wa" id="pWa" target="_blank" rel="noopener">Send on WhatsApp</a>
+        <button type="button" class="btn" id="pClose">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/engine.js"></script>
+  <script src="assets/sim.js"></script>
+  <script src="assets/api.js"></script>
+  <script src="assets/charts.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

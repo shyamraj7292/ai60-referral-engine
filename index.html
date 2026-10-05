@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Build Your First AI Project in 60 Minutes · Free workshop</title>
+  <meta name="description" content="Free 60-minute live workshop for final-year engineering students. Build a working AI project and put it on your resume tonight.">
+  <meta property="og:title" content="Build your first AI project in 60 minutes (free)">
+  <meta property="og:description" content="Free live workshop for final-year engineers. Leave with a working AI project link for your resume. No AI experience needed.">
+  <meta name="theme-color" content="#2a5bd7">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232a5bd7'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' fill='white' text-anchor='middle'%3E60%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="proto-bar">
+    <b>Prototype</b> built for the NxtWave Growth Intern challenge. Not an official NxtWave page, so please use test details.
+    <span id="modePill" class="pill pill-demo">Demo</span>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">AI<b>60</b><span>workshop</span></a>
+      <a class="btn btn-sm" href="#register" data-cta="nav">Save my seat</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <div id="invite" class="invite" hidden><span class="av" id="inviteAv"></span><span id="inviteText"></span></div>
+        <p class="eyebrow">Free live workshop · For final-year engineers</p>
+        <h1>Build your first AI project in <mark>60&nbsp;minutes</mark></h1>
+        <p class="lede">Walk out with a working AI project, and a live link to put on your resume, before your next placement interview. No AI experience needed. Just bring a laptop.</p>
+        <ul class="meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span id="mDate">Sun, 18 Oct</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="mTime">6:00 PM IST</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg><span id="mPlace">Live online</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 20V7M12 7H8a2.5 2.5 0 1 1 0-5c3 0 4 5 4 5zM12 7h4a2.5 2.5 0 1 0 0-5c-3 0-4 5-4 5z"/></svg>Free</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-lg" href="#register" data-cta="hero">Save my free seat →</a>
+          <span id="proof" class="proof" hidden><span class="dot"></span><span id="proofText"></span></span>
+        </div>
+      </div>
+
+      <div aria-hidden="true">
+        <div class="ship">
+          <div class="ship-bar"><i></i><i></i><i></i><span>my-resume-analyzer.vercel.app</span></div>
+          <div class="ship-body">
+            <div class="ship-label">Resume match for "Data Analyst"</div>
+            <div class="score"><b>78</b><span>/ 100</span></div>
+            <div class="meter"><i style="width:78%"></i></div>
+            <div class="ship-label">Missing keywords</div>
+            <div class="chips"><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">A/B testing</span></div>
+            <p class="tip">Put a number on your final-year project: "cut report time by 40%" beats "built a dashboard".</p>
+          </div>
+          <div class="ship-foot"><span>Built by you, live in 60 min</span><span>AI60</span></div>
+        </div>
+        <p class="ship-caption">One of the three projects you can build in the session</p>
+      </div>
+    </section>
+
+    <section class="section" id="build">
+      <div class="wrap">
+        <h2>Pick what you'll build</h2>
+        <p class="sub">Every option is beginner-friendly, uses free tools, and ends with a live link you can share with recruiters.</p>
+        <div class="projects" role="radiogroup" aria-label="Project you want to build">
+          <button type="button" class="project" role="radio" aria-checked="false" data-project="resume">
+            <span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 6.5l2.5 2.5L10 3"/></svg></span>
+            <h3>AI Resume Analyzer</h3>
+            <p>Scores a resume against any job description and lists what's missing.</p>
+            <p class="for">Great for: placement season, anyone job-hunting</p>
+          </button>
+          <button type="button" class="project" role="radio" aria-checked="false" data-project="quiz">
+            <span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 6.5l2.5 2.5L10 3"/></svg></span>
+            <h3>Placement Quiz Bot</h3>
+            <p>Generates aptitude and technical MCQs on any topic and grades your answers.</p>
+            <p class="for">Great for: online assessment prep</p>
+          </button>
+          <button type="button" class="project" role="radio" aria-checked="false" data-project="buddy">
+            <span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 6.5l2.5 2.5L10 3"/></svg></span>
+            <h3>Study Buddy Chatbot</h3>
+            <p>Upload your notes and ask questions. It answers from your syllabus.</p>
+            <p class="for">Great for: semester exams, a final-year project idea</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>The 60 minutes</h2>
+        <p class="sub">Build-along, not a lecture. You type, it runs, you ship.</p>
+        <ol class="agenda">
+          <li><span class="t">0–10 min</span><b>How AI apps work</b><span>APIs and prompts, explained without the maths.</span></li>
+          <li><span class="t">10–40 min</span><b>Build along</b><span>Step by step, on free tools, with mentors in the chat.</span></li>
+          <li><span class="t">40–50 min</span><b>Deploy it</b><span>Get a public link that works on any phone.</span></li>
+          <li><span class="t">50–60 min</span><b>Talk about it</b><span>How to explain your project in an interview.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap why">
+        <div><span class="n">1</span><b>A project recruiters ask about</b><span>"Have you built anything with AI?" Answer with a live demo, not a course name.</span></div>
+        <div><span class="n">2</span><b>A head start on your final-year project</b><span>Each build can grow into a full major project. We'll share how.</span></div>
+        <div><span class="n">3</span><b>Certificate + LinkedIn post</b><span>A certificate and a ready-to-post update so your network sees what you shipped.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="register">
+      <div class="wrap reg-grid">
+        <div class="card">
+          <form id="regForm" novalidate>
+            <h2>Save your free seat</h2>
+            <p class="fine" style="margin-bottom:18px">Takes 20 seconds. The joining link comes on WhatsApp and email.</p>
+            <div class="form-grid">
+              <div class="field full" data-f="name">
+                <label for="fName">Full name</label>
+                <input id="fName" name="name" autocomplete="name" required maxlength="60">
+                <div class="err"></div>
+              </div>
+              <div class="field" data-f="phone">
+                <label for="fPhone">WhatsApp number</label>
+                <div class="phone"><span>+91</span><input id="fPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required maxlength="14" placeholder="98765 43210"></div>
+                <div class="err"></div>
+              </div>
+              <div class="field" data-f="email">
+                <label for="fEmail">Email</label>
+                <input id="fEmail" name="email" type="email" autocomplete="email" required maxlength="100">
+                <div class="err"></div>
+              </div>
+              <div class="field full" data-f="college">
+                <label for="fCollege">College</label>
+                <input id="fCollege" name="college" list="collegeList" autocomplete="organization" required maxlength="80" placeholder="Start typing your college name">
+                <datalist id="collegeList"></datalist>
+                <div class="err"></div>
+              </div>
+              <div class="field" data-f="branch">
+                <label for="fBranch">Branch</label>
+                <select id="fBranch" name="branch" required><option value="">Select</option></select>
+                <div class="err"></div>
+              </div>
+              <div class="field" data-f="gradYear">
+                <label for="fYear">Graduation year</label>
+                <select id="fYear" name="gradYear" required>
+                  <option value="2026">2026</option>
+                  <option value="2027" selected>2027 (final year)</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                </select>
+                <div class="err"></div>
+              </div>
+              <div class="field full" data-f="project">
+                <span class="label" id="projLabel">What do you want to build?</span>
+                <div class="choice" role="radiogroup" aria-labelledby="projLabel">
+                  <label><input type="radio" name="project" value="resume"><span>Resume Analyzer</span></label>
+                  <label><input type="radio" name="project" value="quiz"><span>Quiz Bot</span></label>
+                  <label><input type="radio" name="project" value="buddy"><span>Study Buddy</span></label>
+                  <label><input type="radio" name="project" value="unsure" checked><span>Not sure yet</span></label>
+                </div>
+              </div>
+              <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+            </div>
+            <div id="formError" class="form-error" role="alert" hidden style="margin-top:14px"></div>
+            <div class="submit-row" style="margin-top:18px">
+              <button class="btn btn-lg" id="submitBtn" type="submit">Save my free seat →</button>
+              <p class="fine" style="margin:0">By registering you agree to get workshop updates on WhatsApp and email. No spam, unsubscribe anytime.</p>
+            </div>
+          </form>
+
+          <div id="success" class="success" hidden>
+            <h2 id="sTitle" tabindex="-1">You're in!</h2>
+            <p id="sText">We'll WhatsApp you the joining link a day before. Add it to your calendar so you don't miss it.</p>
+            <div class="row">
+              <a id="gcal" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Add to Google Calendar</a>
+              <button id="ics" class="btn btn-ghost btn-sm" type="button">Download .ics</button>
+            </div>
+
+            <div class="refer">
+              <h3>Bring your friends, unlock rewards</h3>
+              <p class="fine" style="font-size:14.5px;color:var(--ink-2)">Every friend who signs up with your link counts. Building is more fun with your batch.</p>
+              <div class="linkbox"><input id="myLink" readonly aria-label="Your referral link"><button id="copyLink" class="btn btn-sm" type="button">Copy</button></div>
+              <div class="share">
+                <a id="waShare" class="btn btn-wa" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
+                  Share on WhatsApp</a>
+                <a id="liShare" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+                <button id="igCopy" class="btn btn-ghost" type="button">Insta caption</button>
+              </div>
+
+              <div class="mtrack" id="mtrack" aria-hidden="true"><i id="mfill" style="width:0%"></i></div>
+              <ul class="rewards" id="rewards"></ul>
+              <div class="mystatus" aria-live="polite">
+                <span><b id="myCount">0</b> friends joined</span>
+                <span id="myRank"></span>
+                <button id="refresh" class="linklike" type="button">Refresh</button>
+              </div>
+              <p class="fine" style="margin-top:12px">When registrations close, the top 3 referrers win ₹500, ₹300 and ₹200 vouchers. Only friends who attend the workshop count toward prizes.</p>
+            </div>
+            <p class="fine" style="margin:18px 0 0"><button id="notMe" class="linklike" type="button">Not you? Register someone else</button></p>
+          </div>
+        </div>
+
+        <aside class="boards">
+          <div class="card board">
+            <h3>Top referrers</h3>
+            <p class="fine">Who's bringing the most friends. Updates live.</p>
+            <ol class="lb" id="lbPeople"><li><span class="empty">Loading…</span></li></ol>
+          </div>
+          <div class="card board">
+            <h3>College leaderboard</h3>
+            <p class="fine">Which campus ships the most AI projects?</p>
+            <ol class="lb" id="lbColleges"><li><span class="empty">Loading…</span></li></ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="wrap">
+        <h2>Questions</h2>
+        <details><summary>Is it really free?</summary><p>Yes. No payment, no card, nothing to install that costs money. All the tools we use have free tiers.</p></details>
+        <details><summary>I've never coded with AI. Can I keep up?</summary><p>Yes. The session assumes zero AI experience. If you can copy, paste and follow along, you'll ship. Mentors answer questions in the chat.</p></details>
+        <details><summary>What do I need?</summary><p>A laptop with Chrome, a Google account, and 60 minutes. A phone alone won't be enough to build.</p></details>
+        <details><summary>Will there be a recording?</summary><p>Registered students get the recording and the code templates, but building live with mentors in the chat is what gets you to a finished project.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>Prototype by Shyamraj H for the NxtWave Growth Intern challenge.</span>
+      <a href="dashboard.html">Open the growth console →</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/engine.js"></script>
+  <script src="assets/sim.js"></script>
+  <script src="assets/api.js"></script>
+  <script src="assets/register.js"></script>
+</body>
+</html>

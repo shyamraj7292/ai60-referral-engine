@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai60-demo",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/dev-server.js"],
+      "port": 8787
+    },
+    {
+      "name": "ai60-live-mock",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/dev-server.js", "--live"],
+      "port": 8788
+    }
+  ]
+}
