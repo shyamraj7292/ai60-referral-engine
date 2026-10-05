@@ -1,7 +1,7 @@
 /* AI60 referral engine — configuration. This is the only file you need to edit. */
 window.AI60_CONFIG = {
   // Google Apps Script web-app URL (see SETUP.md). Leave empty to run in demo mode.
-  API_URL: '',
+  API_URL: 'https://script.google.com/macros/s/AKfycbzUN1jjM8o1FE0PuJb2cOsDEAdqEtvOO2Ay_NCl3ObGmnpRSGEtIUFpGaiSTIpIYTn3Lw/exec',
 
   // Public URL of the sign-up page, used to build referral links.
   // Empty = the URL this page is served from.
